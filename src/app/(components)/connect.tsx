@@ -31,7 +31,7 @@ export function Connect() {
       <h2
         className="text-2xl font-bold tracking-tight"
       >
-        Let's Connect
+        Let&apos;s Connect
       </h2>
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-6"
