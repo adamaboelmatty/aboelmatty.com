@@ -4,7 +4,13 @@ import React from "react";
 import { ThemeToggle } from "./(components)/theme-toggle";
 import "./globals.css";
 
-export default function Layout({ children }) {
+import { ReactNode } from "react";
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <html>
         <body>
