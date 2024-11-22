@@ -8,13 +8,13 @@ export function Hero() {
       <h1
         className="text-4xl md:text-5xl font-bold tracking-tight"
       >
-        Hi, I'm Adam.
+        Hi, I&apos;m Adam.
       </h1>
       <p
         className="text-lg text-muted-foreground leading-relaxed"
       >
-        I'm passionate about building tools and platforms that empower creators
-        and entrepreneurs. Currently, I'm working on{" "}
+        I&apos;m passionate about building tools and platforms that empower creators
+        and entrepreneurs. Currently, I&apos;m working on{" "}
         <a
           href="https://viralvisions.live"
           className="text-primary hover:underline font-medium"
