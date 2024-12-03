@@ -7,7 +7,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { ExternalLink, Figma, Gamepad2, TestTubes, Boxes, PenTool, Brain, Search, Lightbulb, Code } from "lucide-react";
+import { ExternalLink, Figma, Heart, Code, Boxes, Search, Lightbulb } from "lucide-react";
 
 interface Project {
   title: string;
@@ -27,12 +27,9 @@ interface Project {
 export default function Projects() {
   const toolIcons = {
     "Figma": <Figma className="h-3 w-3" />,
-    "Adobe XD": <PenTool className="h-3 w-3" />,
-    "Maze": <Brain className="h-3 w-3" />,
-    "Principle": <Boxes className="h-3 w-3" />,
-    "UserTesting": <TestTubes className="h-3 w-3" />,
-    "Miro": <Gamepad2 className="h-3 w-3" />,
-    "ProtoPie": <PenTool className="h-3 w-3" />,
+    "Polymet": <Boxes className="h-3 w-3" />,
+    "VSC": <Code className="h-3 w-3" />,
+    "Lovable": <Heart className="h-3 w-3" />,
   };
 
   const projects: Project[] = [
@@ -40,7 +37,7 @@ export default function Projects() {
       title: "SubSwapROI.com",
       description: "A tool for subscription management and optimization.",
       role: "Lead UI/UX Designer",
-      tools: ["Figma", "Adobe XD", "Maze"],
+      tools: ["Figma", "Polymet", "VSC", "Lovable"],
       process: {
         research: [
           "Conducted 15 user interviews",
@@ -68,7 +65,7 @@ export default function Projects() {
       title: "GoalGrub.com",
       description: "Helping users set and achieve fitness goals through personalized meal plans.",
       role: "UI/UX Designer & Researcher",
-      tools: ["Figma", "Principle", "UserTesting"],
+      tools: ["Figma", "Polymet", "VSC", "Lovable"],
       process: {
         research: [
           "Analyzed user dietary preferences",
@@ -96,7 +93,7 @@ export default function Projects() {
       title: "CreativConnect.app",
       description: "A platform to connect creatives and collaborators for projects.",
       role: "Product Designer",
-      tools: ["Figma", "Miro", "ProtoPie"],
+      tools: ["Figma", "Polymet", "VSC", "Lovable"],
       process: {
         research: [
           "Surveyed 100+ creatives",
@@ -125,12 +122,9 @@ export default function Projects() {
   const getToolColor = (tool: string) => {
     const colors = {
       "Figma": "bg-purple-50 text-purple-600 border-purple-200",
-      "Adobe XD": "bg-pink-50 text-pink-600 border-pink-200",
-      "Maze": "bg-blue-50 text-blue-600 border-blue-200",
-      "Principle": "bg-green-50 text-green-600 border-green-200",
-      "UserTesting": "bg-orange-50 text-orange-600 border-orange-200",
-      "Miro": "bg-yellow-50 text-yellow-600 border-yellow-200",
-      "ProtoPie": "bg-red-50 text-red-600 border-red-200",
+      "Polymet": "bg-blue-50 text-blue-600 border-blue-200",
+      "VSC": "bg-green-50 text-green-600 border-green-200",
+      "Lovable": "bg-pink-50 text-pink-600 border-pink-200",
     };
     return colors[tool as keyof typeof colors] || "bg-gray-50 text-gray-600 border-gray-200";
   };
@@ -150,7 +144,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Card
             key={index}
-            className="hover:shadow-lg transition-shadow"
+            className="hover:shadow-lg transition-shadow relative pb-14"
           >
             <CardHeader className="space-y-6">
               <CardTitle className="flex items-center justify-between">
@@ -216,12 +210,14 @@ export default function Projects() {
                   </div>
                 </div>
               </CardDescription>
-              {project.status && (
+            </CardHeader>
+            {project.status && (
+              <div className="absolute bottom-4 left-6">
                 <span className="inline-block text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                   {project.status}
                 </span>
-              )}
-            </CardHeader>
+              </div>
+            )}
           </Card>
         ))}
       </div>
